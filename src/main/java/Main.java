@@ -19,14 +19,15 @@ public class Main {
 
         //call sumOfDigits
         int sum_of_digits = manipulator.sumOfDigits(user_3_digit_number);
-        System.out.println(sum_of_digits);
+        System.out.printf("The sum of the digits is %d%n",sum_of_digits);
 
         //call reverseNumber
         String reversed_numbers = manipulator.reverseNumber(user_3_digit_number);
-        System.out.println(reversed_numbers);
+        System.out.printf("In reverse the numbers are %s%n",reversed_numbers);
 
         //call toArray
         int[] array_of_digits = manipulator.toArray(user_3_digit_number);
+        System.out.println("Printing Array");
         for (int i = 0; i < 3; ++i) {
             System.out.println(array_of_digits[i]);
         }
