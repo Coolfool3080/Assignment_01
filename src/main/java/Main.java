@@ -10,9 +10,19 @@ public class Main {
         // create scanner for input from the keyboard.
         Scanner keyboard = new Scanner(System.in);
 
-        //receive user input for a 3-digit number
-        System.out.print("Enter a 3-digit number: ");
-        int user_3_digit_number = keyboard.nextInt();
+        //get user input and validate 3-digit number
+        int user_3_digit_number = 0;
+        boolean is_valid_3_digit_number = false;
+        while(!is_valid_3_digit_number)
+        {
+            //receive user input for a 3-digit number
+            System.out.print("Enter a 3-digit number: ");
+            user_3_digit_number = keyboard.nextInt();
+            if(user_3_digit_number>99 && user_3_digit_number<1000)
+            {
+                is_valid_3_digit_number = true;
+            }
+        }
 
         //make instance of NumberManipulator object
         NumberManipulator manipulator = new NumberManipulator();
@@ -28,7 +38,7 @@ public class Main {
         //call toArray
         int[] array_of_digits = manipulator.toArray(user_3_digit_number);
         System.out.println("Printing Array");
-        for (int i = 0; i < 3; ++i) {
+        for (int i = 0; i < array_of_digits.length; ++i) {
             System.out.println(array_of_digits[i]);
         }
     }
